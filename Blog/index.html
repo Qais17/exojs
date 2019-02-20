@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title>ex Ajax</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="ex1.js">
+  function server()
+{
+   xmlhttp = new XMLHttpRequest();
+   xmlhttp.open("GET","http://localhost:8001/getstring", true);
+   xmlhttp.onreadystatechange=function(){
+         if (xmlhttp.readyState==4 && xmlhttp.status==200){
+           string=xmlhttp.responseText;
+         }
+   }
+   xmlhttp.send();
+}</script>
+</head>
+<body onload="process()">
+ <h1>ex 1</h1>
+ entrer votre nom
+ <input type="text" id="name"/>
+ <div id="answer"></div>
+</body>
+</html>
